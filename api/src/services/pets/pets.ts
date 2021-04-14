@@ -5,6 +5,7 @@ export const pets = () => {
   // Should have no TS errors here
   const name = context.currentUser.name
   console.log(name)
+  console.log(context.currentUser.Member[0].role)
 
   return db.pet.findMany()
 }

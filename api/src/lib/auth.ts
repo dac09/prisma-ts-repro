@@ -16,27 +16,14 @@ export const getCurrentUser = async (decoded: DecodedJWTToken) => {
     where: {
       email: decoded.email,
     },
+    include: {
+      Member: true,
+    },
   })
 }
 
-export const requireAuth = ({ role } = {}) => {
+export const requireAuth = () => {
   if (!context.currentUser) {
     throw new AuthenticationError("You don't have permission to do that.")
-  }
-
-  if (
-    typeof role !== 'undefined' &&
-    typeof role === 'string' &&
-    !context.currentUser.roles?.includes(role)
-  ) {
-    throw new ForbiddenError("You don't have access to do that.")
-  }
-
-  if (
-    typeof role !== 'undefined' &&
-    Array.isArray(role) &&
-    !context.currentUser.roles?.some((r) => role.includes(r))
-  ) {
-    throw new ForbiddenError("You don't have access to do that.")
   }
 }

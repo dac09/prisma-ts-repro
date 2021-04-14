@@ -7,6 +7,7 @@ const HomePage = () => {
 
   // Should have no TS errors here
   console.log(currentUser.name)
+  console.log(currentUser.Member[0].teamId)
 
   return (
     <>

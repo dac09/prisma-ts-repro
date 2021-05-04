@@ -1,0 +1,23 @@
+schema: http://localhost:8911/graphql
+watch:
+  - ./{web,api}/src/**/!(*.d).{ts,tsx,js.jsx}
+config:
+  strict: true
+  scalars:
+    DateTime: string
+    Date: string
+    JSON: Record<string, unknown>
+    JSONObject: Record<string, unknown>
+    Time: string
+generates:
+  ./api/src/generated-graphql-types.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+  ./web/src/generated-graphql-types.tsx:
+    documents:
+      - ./web/src/**/!(*.d).{ts,tsx,js,jsx}
+    plugins:
+      - typescript
+      - typescript-operations
+      # - typescript-react-apollo # Commented out because it generates unused types. Could be useful to consolidate query info in one file.

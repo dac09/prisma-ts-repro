@@ -8,6 +8,15 @@ generator client {
   binaryTargets = "native"
 }
 
+model Member {
+  id     String @id @default(cuid())
+  role   String
+  team   Team   @relation(fields: [teamId], references: [id])
+  teamId String
+  user   User   @relation(fields: [userId], references: [id])
+  userId Int
+}
+
 model User {
   id     Int      @id @default(autoincrement())
   email  String   @unique
@@ -19,15 +28,6 @@ model Team {
   id     String   @id @default(cuid())
   name   String
   Member Member[]
-}
-
-model Member {
-  id     String @id @default(cuid())
-  role   String
-  team   Team   @relation(fields: [teamId], references: [id])
-  teamId String
-  user   User   @relation(fields: [userId], references: [id])
-  userId Int
 }
 
 model Pet {

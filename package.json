@@ -8,15 +8,21 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "^0.31.1-rc.3"
+    "@graphql-codegen/cli": "^1.21.4",
+    "@graphql-codegen/typescript": "^1.22.0",
+    "@graphql-codegen/typescript-operations": "^1.17.16",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.4",
+    "@graphql-codegen/typescript-resolvers": "^1.19.1",
+    "@redwoodjs/core": "^0.31.1-rc.3",
+    "ts-node": "^9.1.1"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
     "root": true
   },
   "engines": {
-    "node": ">=14",
-    "yarn": ">=1.15"
+    "node": "14.x",
+    "yarn": "1.18"
   },
   "resolutions": {
     "react": "17.0.1",

@@ -1,4 +1,6 @@
 import { Link, routes } from '@redwoodjs/router'
+// @ts-expect-error: Cell Types not handled yet
+import PetCell from 'src/components/PetCell/PetCell'
 
 const LandingPage = () => {
   return (
@@ -11,6 +13,7 @@ const LandingPage = () => {
         My default route is named <code>landing</code>, link to me with `
         <Link to={routes.landing()}>Landing</Link>`
       </p>
+      <PetCell />
     </>
   )
 }

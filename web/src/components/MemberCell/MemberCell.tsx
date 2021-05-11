@@ -1,8 +1,7 @@
-import { PetQuery } from 'types/gql-types'
-
+import type { MemberQuery } from 'types/gql-types'
 export const QUERY = gql`
-  query PetQuery {
-    pets {
+  query MemberQuery {
+    members {
       id
     }
   }
@@ -16,6 +15,6 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
-export const Success = ({ pets }: PetQuery) => {
-  return <div>{JSON.stringify(pets)}</div>
+export const Success = ({ members }: MemberQuery) => {
+  return <div>{JSON.stringify(members)}</div>
 }

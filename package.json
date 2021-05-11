@@ -4,15 +4,11 @@
     "packages": [
       "api",
       "web",
-      "packages/*"
+      "packages/*",
+      "redwood/*"
     ]
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^1.21.4",
-    "@graphql-codegen/typescript": "^1.22.0",
-    "@graphql-codegen/typescript-operations": "^1.17.16",
-    "@graphql-codegen/typescript-react-apollo": "^2.2.4",
-    "@graphql-codegen/typescript-resolvers": "^1.19.1",
     "@redwoodjs/core": "^0.31.2",
     "ts-node": "^9.1.1"
   },
@@ -26,6 +22,21 @@
   },
   "resolutions": {
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "@redwoodjs/api": "0.31.2",
+    "@redwoodjs/api-server": "0.31.2",
+    "@redwoodjs/auth": "0.31.2",
+    "@redwoodjs/cli": "0.31.2",
+    "@redwoodjs/core": "0.31.2",
+    "@redwoodjs/dev-server": "0.31.2",
+    "@redwoodjs/eslint-config": "0.31.2",
+    "@redwoodjs/eslint-plugin-redwood": "0.31.2",
+    "@redwoodjs/forms": "0.31.2",
+    "@redwoodjs/internal": "0.31.2",
+    "@redwoodjs/prerender": "0.31.2",
+    "@redwoodjs/router": "0.31.2",
+    "@redwoodjs/structure": "0.31.2",
+    "@redwoodjs/testing": "0.31.2",
+    "@redwoodjs/web": "0.31.2"
   }
 }

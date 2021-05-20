@@ -8,18 +8,19 @@ import Routes from 'src/Routes'
 
 import './scaffold.css'
 import './index.css'
+import { RedwoodReactQueryProvider } from './components/ReactQueryProvider'
 
 const supabaseClient = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_KEY
-  )
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_KEY
+)
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
     <AuthProvider client={supabaseClient} type="supabase">
-      <RedwoodApolloProvider>
+      <RedwoodReactQueryProvider>
         <Routes />
-      </RedwoodApolloProvider>
+      </RedwoodReactQueryProvider>
     </AuthProvider>
   </FatalErrorBoundary>
 )

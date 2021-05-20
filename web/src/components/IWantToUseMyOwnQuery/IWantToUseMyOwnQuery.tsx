@@ -1,8 +1,8 @@
 import { useMutation, useQuery } from '@redwoodjs/web'
-import { PetQuery } from 'types/gql-types'
+import type { PetQueryTwo } from 'types/gql-types'
 
 const QUERY = gql`
-  query PetQuery {
+  query PetQueryTwo {
     pets {
       id
       name
@@ -11,14 +11,7 @@ const QUERY = gql`
 `
 
 const IWantToUseMyOwnQuery = () => {
-  const out = useQuery<PetQuery>(QUERY)
-
-  // This is not actually a mutation
-  out.const[(fetchResult, mutationResult)] = useMutation<PetQuery>(QUERY)
-
-  const asyncStuff = async () => {
-    const result = await fetchResult()
-  }
+  const out = useQuery<PetQueryTwo>(QUERY)
 
   return (
     <div>

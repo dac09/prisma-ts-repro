@@ -1,6 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
 // @ts-expect-error: Cell Types not handled yet
-import PetCell from 'src/components/PetCell/PetCell'
+import PetCell from 'src/components/PetsCell'
+import MembersCell from 'src/components/MembersCell'
 
 const LandingPage = () => {
   return (
@@ -14,6 +15,7 @@ const LandingPage = () => {
         <Link to={routes.landing()}>Landing</Link>`
       </p>
       <PetCell />
+      <MembersCell />
     </>
   )
 }

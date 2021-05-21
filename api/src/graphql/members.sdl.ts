@@ -10,6 +10,7 @@ export const schema = gql`
 
   type Query {
     members: [Member!]!
+    member(id: String): Member
   }
 
   input CreateMemberInput {

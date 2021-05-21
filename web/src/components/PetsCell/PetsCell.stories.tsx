@@ -1,5 +1,5 @@
-import { Loading, Empty, Failure, Success } from './PetCell'
-import { standard } from './PetCell.mock'
+import { Loading, Empty, Failure, Success } from './PetsCell'
+import { standard } from './PetsCell.mock'
 
 export const loading = () => {
   return Loading ? <Loading /> : null
@@ -17,4 +17,4 @@ export const success = () => {
   return Success ? <Success {...standard()} /> : null
 }
 
-export default { title: 'Cells/PetCell' }
+export default { title: 'Cells/PetsCell' }

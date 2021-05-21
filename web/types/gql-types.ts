@@ -89,10 +89,16 @@ export type Query = {
   __typename?: 'Query';
   redwood?: Maybe<Redwood>;
   members: Array<Member>;
+  member?: Maybe<Member>;
   pets: Array<Pet>;
   teams: Array<Team>;
   team?: Maybe<Team>;
   users: Array<User>;
+};
+
+
+export type QueryMemberArgs = {
+  id?: Maybe<Scalars['String']>;
 };
 
 
@@ -181,6 +187,30 @@ export type PetQueryTwo = (
   )> }
 );
 
+export type FindMemberQuery2Variables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type FindMemberQuery2 = (
+  { __typename?: 'Query' }
+  & { member?: Maybe<(
+    { __typename?: 'Member' }
+    & Pick<Member, 'id'>
+  )> }
+);
+
+export type MembersQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type MembersQuery = (
+  { __typename?: 'Query' }
+  & { members: Array<(
+    { __typename?: 'Member' }
+    & Pick<Member, 'id'>
+  )> }
+);
+
 export type CreateTeamMutationVariables = Exact<{
   input: CreateTeamInput;
 }>;
@@ -194,10 +224,10 @@ export type CreateTeamMutation = (
   ) }
 );
 
-export type PetQueryVariables = Exact<{ [key: string]: never; }>;
+export type PetsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PetQuery = (
+export type PetsQuery = (
   { __typename?: 'Query' }
   & { pets: Array<(
     { __typename?: 'Pet' }

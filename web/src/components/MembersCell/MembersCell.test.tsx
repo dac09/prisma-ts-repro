@@ -1,8 +1,8 @@
 import { render, screen } from '@redwoodjs/testing'
-import { Loading, Empty, Failure, Success } from './MemberCell'
-import { standard } from './MemberCell.mock'
+import { Loading, Empty, Failure, Success } from './MembersCell'
+import { standard } from './MembersCell.mock'
 
-describe('MemberCell', () => {
+describe('MembersCell', () => {
   it('renders Loading successfully', () => {
     expect(() => {
       render(<Loading />)
@@ -29,7 +29,7 @@ describe('MemberCell', () => {
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success member={standard().member} />)
+      render(<Success members={standard().members} />)
     }).not.toThrow()
   })
 })

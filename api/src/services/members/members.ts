@@ -12,3 +12,11 @@ export const Member = {
   user: (_obj, { root }: ResolverArgs<Prisma.MemberWhereUniqueInput>) =>
     db.member.findUnique({ where: { id: root.id } }).user(),
 }
+
+export const member = ({ id }) => {
+  return db.member.findUnique({
+    where: {
+      id,
+    },
+  })
+}

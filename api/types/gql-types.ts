@@ -91,10 +91,16 @@ export type Query = {
   __typename?: 'Query';
   redwood?: Maybe<Redwood>;
   members: Array<Member>;
+  member?: Maybe<Member>;
   pets: Array<Pet>;
   teams: Array<Team>;
   team?: Maybe<Team>;
   users: Array<User>;
+};
+
+
+export type QueryMemberArgs = {
+  id?: Maybe<Scalars['String']>;
 };
 
 
@@ -317,6 +323,7 @@ export type PetResolvers<ContextType = any, ParentType extends ResolversParentTy
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   redwood?: Resolver<Maybe<ResolversTypes['Redwood']>, ParentType, ContextType>;
   members?: Resolver<Array<ResolversTypes['Member']>, ParentType, ContextType>;
+  member?: Resolver<Maybe<ResolversTypes['Member']>, ParentType, ContextType, RequireFields<QueryMemberArgs, never>>;
   pets?: Resolver<Array<ResolversTypes['Pet']>, ParentType, ContextType>;
   teams?: Resolver<Array<ResolversTypes['Team']>, ParentType, ContextType>;
   team?: Resolver<Maybe<ResolversTypes['Team']>, ParentType, ContextType, RequireFields<QueryTeamArgs, 'id'>>;

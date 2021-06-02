@@ -1,8 +1,9 @@
-import type { MembersQuery } from 'types/gql-types'
+import type { FindMembersQuery2 } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
+
 export const QUERY = gql`
-  query MembersQuery {
+  query FindMembersQuery2 {
     members {
       id
     }
@@ -11,15 +12,13 @@ export const QUERY = gql`
 
 export const Loading = () => <div>Loading...</div>
 
-export const Empty = () => <div>Member Empty</div>
+export const Empty = () => <div>Empty</div>
 
 export const Failure = ({ error }: CellFailureProps) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
-export const Success = (props: CellSuccessProps<MembersQuery>) => {
-  const { members } = props
-  console.log(props.client.cache)
+export const Success = ({ members }: CellSuccessProps<FindMembersQuery2>) => {
   return (
     <ul>
       {members.map((item) => {

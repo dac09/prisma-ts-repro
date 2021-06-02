@@ -9,15 +9,10 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   Date: string;
-  /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   DateTime: string;
-  /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: Record<string, unknown>;
-  /** The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSONObject: Record<string, unknown>;
-  /** A time string at UTC, such as 10:15:30Z, compliant with the `full-time` format outlined in section 5.6 of the RFC 3339profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   Time: string;
 };
 
@@ -87,12 +82,12 @@ export type Pet = {
 
 export type Query = {
   __typename?: 'Query';
-  redwood?: Maybe<Redwood>;
-  members: Array<Member>;
   member?: Maybe<Member>;
+  members: Array<Member>;
   pets: Array<Pet>;
-  teams: Array<Team>;
+  redwood?: Maybe<Redwood>;
   team?: Maybe<Team>;
+  teams: Array<Team>;
   users: Array<User>;
 };
 
@@ -200,10 +195,10 @@ export type FindMemberQuery2 = (
   )> }
 );
 
-export type MembersQueryVariables = Exact<{ [key: string]: never; }>;
+export type FindMembersQuery2Variables = Exact<{ [key: string]: never; }>;
 
 
-export type MembersQuery = (
+export type FindMembersQuery2 = (
   { __typename?: 'Query' }
   & { members: Array<(
     { __typename?: 'Member' }

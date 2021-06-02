@@ -1,4 +1,4 @@
-import type { FindMemberQuery2 } from 'types/gql-types'
+import type { FindMemberQuery2 } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 export const QUERY = gql`

@@ -1,22 +1,12 @@
-import { Prisma } from '@prisma/client'
-import { ResolverArgs } from '@redwoodjs/api/dist/types'
 import { db } from 'src/lib/db'
+import { requireAuth } from 'src/lib/auth'
+import { BeforeResolverSpecType } from '@redwoodjs/api'
+
+// Used when the environment variable REDWOOD_SECURE_SERVICES=1
+export const beforeResolver = (rules: BeforeResolverSpecType) => {
+  rules.add(requireAuth)
+}
 
 export const members = () => {
   return db.member.findMany()
-}
-
-export const Member = {
-  team: (_obj, { root }: ResolverArgs<Prisma.MemberWhereUniqueInput>) =>
-    db.member.findUnique({ where: { id: root.id } }).team(),
-  user: (_obj, { root }: ResolverArgs<Prisma.MemberWhereUniqueInput>) =>
-    db.member.findUnique({ where: { id: root.id } }).user(),
-}
-
-export const member = ({ id }) => {
-  return db.member.findUnique({
-    where: {
-      id,
-    },
-  })
 }

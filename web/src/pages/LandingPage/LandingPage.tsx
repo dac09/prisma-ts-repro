@@ -1,6 +1,6 @@
 import { Link, routes } from '@redwoodjs/router'
-import PetCell from 'src/components/PetsCell'
-import MembersCell from 'src/components/MembersCell'
+// import PetCell from 'src/components/PetsCell'
+// import MembersCell from 'src/components/MembersCell'
 
 const LandingPage = () => {
   return (
@@ -13,8 +13,8 @@ const LandingPage = () => {
         My default route is named <code>landing</code>, link to me with `
         <Link to={routes.landing()}>Landing</Link>`
       </p>
-      <PetCell />
-      <MembersCell />
+      {/* <PetCell /> */}
+      {/* <MembersCell /> */}
     </>
   )
 }

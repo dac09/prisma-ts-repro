@@ -15,8 +15,8 @@ const Routes = () => {
       <Route path="/teams/new" page={NewTeamPage} name="newTeam" />
       <Route path="/teams/{id}/edit" page={EditTeamPage} name="editTeam" />
       <Route path="/teams/{id}" page={TeamPage} name="team" />
-      <Route path="/teams" page={TeamsPage} name="teams" />
-      <Route path="/" page={LandingPage} name="landing" />
+      <Route path="/teams" page={TeamsPage} name="teams" prerender />
+      <Route path="/" page={LandingPage} name="landing" prerender />
       <Route path="/home" page={HomePage} name="home" prerender />
       <Route notfound page={NotFoundPage} />
     </Router>

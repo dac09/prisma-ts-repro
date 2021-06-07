@@ -9,5 +9,6 @@
       "destination": "/index.html"
     }
   ],
-  "trailingSlash": false
+  "trailingSlash": false,
+  "cleanUrls": true
 }

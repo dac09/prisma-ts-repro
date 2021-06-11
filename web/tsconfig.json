@@ -10,6 +10,7 @@
     "rootDirs": ["./src", "../.redwood/types/mirror/web/src"],
     "paths": {
       "src/*": ["./src/*", "../.redwood/types/mirror/web/src/*"],
+      "@layouts/*": ["./src/layouts/*"],
       "types/*": ["./types/*"]
     },
     "typeRoots": ["../node_modules/@types", "./node_modules/@types"],

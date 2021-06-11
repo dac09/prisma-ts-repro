@@ -16,7 +16,7 @@ const Routes = () => {
       <Route path="/teams/{id}/edit" page={EditTeamPage} name="editTeam" />
       <Route path="/teams/{id}" page={TeamPage} name="team" />
       <Route path="/zeiss" page={ZeissPage} name="zeiss" />
-      <Set>
+      <Set prerender>
         <Route path="/teams" page={TeamsPage} name="teams" />
         <Route path="/" page={LandingPage} name="landing" />
         <Route path="/home" page={HomePage} name="home" />

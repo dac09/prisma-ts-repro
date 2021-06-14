@@ -1,4 +1,4 @@
-import type { PetsQuery } from 'types/gql-types'
+import type { PetsQuery } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 export const QUERY = gql`

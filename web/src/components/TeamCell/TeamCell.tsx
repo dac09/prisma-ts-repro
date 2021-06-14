@@ -1,18 +1,28 @@
-import Team from 'src/components/Team'
+import type { FindTeamQuery, FindTeamQueryVariables } from 'types/graphql'
+import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 export const QUERY = gql`
-  query FIND_TEAM_BY_ID($id: String!) {
+  query FindTeamQuery($id: String!) {
     team: team(id: $id) {
       id
-      name
     }
   }
 `
 
 export const Loading = () => <div>Loading...</div>
 
-export const Empty = () => <div>Team not found</div>
+export const Empty = () => <div>Empty</div>
 
-export const Success = ({ team }) => {
-  return <Team team={team} />
+export const Failure = ({ error }: CellFailureProps) => (
+  <div style={{ color: 'red' }}>Error: {error.message}</div>
+)
+
+export interface CellProps extends FindTeamQueryVariables {
+  // add your own props here
+}
+
+export const Success = ({
+  team,
+}: CellSuccessProps<FindTeamQuery, CellProps>) => {
+  return <div>{JSON.stringify(team)}</div>
 }

@@ -195,10 +195,10 @@ export type FindMemberQuery2 = (
   )> }
 );
 
-export type FindMembersQuery2Variables = Exact<{ [key: string]: never; }>;
+export type MembersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type FindMembersQuery2 = (
+export type MembersQuery = (
   { __typename?: 'Query' }
   & { members: Array<(
     { __typename?: 'Member' }
@@ -241,6 +241,19 @@ export type DeleteTeamMutation = (
     { __typename?: 'Team' }
     & Pick<Team, 'id'>
   ) }
+);
+
+export type FindTeamQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type FindTeamQuery = (
+  { __typename?: 'Query' }
+  & { team?: Maybe<(
+    { __typename?: 'Team' }
+    & Pick<Team, 'id'>
+  )> }
 );
 
 export type TeamsVariables = Exact<{ [key: string]: never; }>;

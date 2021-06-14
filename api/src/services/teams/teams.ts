@@ -1,5 +1,4 @@
 import { Prisma } from '@prisma/client'
-import { ResolverArgs } from '@redwoodjs/api/dist/types'
 import { db } from 'src/lib/db'
 
 export const teams = () => {
@@ -40,6 +39,6 @@ export const deleteTeam = ({ id }: Prisma.TeamWhereUniqueInput) => {
 }
 
 export const Team = {
-  Member: (_obj, { root }: ResolverArgs<Prisma.TeamWhereUniqueInput>) =>
+  Member: (_obj, { root }) =>
     db.team.findUnique({ where: { id: root.id } }).Member(),
 }

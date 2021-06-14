@@ -2,8 +2,6 @@ import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { Link, routes, navigate } from '@redwoodjs/router'
 
-import { QUERY } from 'src/components/TeamsCell'
-
 const DELETE_TEAM_MUTATION = gql`
   mutation DeleteTeamMutation($id: String!) {
     deleteTeam(id: $id) {

@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from '@redwoodjs/web'
-import type { PetQueryTwo } from 'types/gql-types'
+import type { PetQueryTwo } from 'types/graphql'
 
 const QUERY = gql`
   query PetQueryTwo {

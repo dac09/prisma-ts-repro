@@ -13,10 +13,10 @@
     ]
   },
   "dependencies": {
-    "@redwoodjs/auth": "^0.33.4-canary.53",
-    "@redwoodjs/forms": "^0.33.4-canary.53",
-    "@redwoodjs/router": "^0.33.4-canary.53",
-    "@redwoodjs/web": "^0.33.4-canary.53",
+    "@redwoodjs/auth": "^0.33.4-canary.59",
+    "@redwoodjs/forms": "^0.33.4-canary.59",
+    "@redwoodjs/router": "^0.33.4-canary.59",
+    "@redwoodjs/web": "^0.33.4-canary.59",
     "@supabase/supabase-js": "^1.11.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

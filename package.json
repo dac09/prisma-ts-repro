@@ -4,11 +4,13 @@
     "packages": [
       "api",
       "web",
-      "packages/*"
+      "packages/*",
+      "node_modules/_redwood-linked-packages/packages/*",
+      "redwood/*"
     ]
   },
   "devDependencies": {
-    "@redwoodjs/cli": "^0.33.4-canary.53"
+    "@redwoodjs/cli": "^0.33.4-canary.59"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
@@ -18,5 +20,20 @@
     "node": "14.x",
     "yarn": ">=1.18"
   },
-  "resolutions": {}
+  "resolutions": {
+    "@redwoodjs/api": "0.33.3",
+    "@redwoodjs/api-server": "0.33.3",
+    "@redwoodjs/auth": "0.33.3",
+    "@redwoodjs/cli": "0.33.3",
+    "@redwoodjs/core": "0.33.3",
+    "@redwoodjs/dev-server": "0.33.3",
+    "@redwoodjs/eslint-config": "0.33.3",
+    "@redwoodjs/forms": "0.33.3",
+    "@redwoodjs/internal": "0.33.3",
+    "@redwoodjs/prerender": "0.33.3",
+    "@redwoodjs/router": "0.33.3",
+    "@redwoodjs/structure": "0.33.3",
+    "@redwoodjs/testing": "0.33.3",
+    "@redwoodjs/web": "0.33.3"
+  }
 }

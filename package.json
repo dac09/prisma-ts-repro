@@ -8,15 +8,11 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "^0.33.4-canary.73"
+    "@redwoodjs/core": "^0.34.2-canary.43"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
     "root": true
-  },
-  "engines": {
-    "node": "14.x",
-    "yarn": ">=1.18"
   },
   "resolutions": {}
 }
